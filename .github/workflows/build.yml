@@ -28,9 +28,9 @@ jobs:
         #os: [ubuntu-latest, macos-12, windows-latest]
         os: [gitrunners-ubuntu-2204-arm64-2vcpu]
     steps:
-      - uses: actions/setup-python@v1
+      - uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.x"
       - uses: actions/checkout@v1
         with:
           submodules: true
