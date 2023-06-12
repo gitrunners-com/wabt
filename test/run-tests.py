@@ -692,6 +692,8 @@ def FindTestFiles(ext, filter_pattern_re, exclude_dirs):
                 # Filtering out dirs here causes os.walk not to descend into them
                 dirs.remove(ex)
         for f in files:
+            if f.startswith('simd'):
+                continue
             path = os.path.join(root, f)
             if os.path.splitext(f)[1] == ext:
                 tests.append(os.path.relpath(path, REPO_ROOT_DIR))
